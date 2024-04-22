@@ -1,20 +1,20 @@
+import { FontAwesome } from '@expo/vector-icons';
 import { forwardRef } from 'react';
 import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
 interface ButtonProps extends TouchableOpacityProps {
-  onPress: () => void;
-  title: string;
+  onPress?: () => void;
+  title?: string;
 }
 
 export const Button = forwardRef<TouchableOpacity, ButtonProps>(({ onPress, title }, ref) => {
   return (
-    <TouchableOpacity ref={ref} className={styles.button} onPress={onPress}>
-      <Text className={styles.buttonText}>{title}</Text>
+    <TouchableOpacity
+      ref={ref}
+      className="w-24 flex-row items-center justify-between rounded-lg bg-orange-500 px-3 py-2"
+      onPress={onPress}>
+      {title && <Text className="text-center text-lg font-semibold text-white">{title}</Text>}
+      <FontAwesome name="edit" size={25} color="white" />
     </TouchableOpacity>
   );
 });
-
-const styles = {
-  button: 'items-center bg-indigo-500 rounded-[28px] shadow-md p-4',
-  buttonText: 'text-white text-lg font-semibold text-center',
-};

@@ -1,11 +1,10 @@
-import { Text } from 'react-native';
-
 import { ScreenContent } from '~/components/ScreenContent';
+import { Span } from '~/components/Text';
 
 export default function User() {
   return (
     <ScreenContent>
-      <Text>data</Text>
+      <Span>data</Span>
     </ScreenContent>
   );
 }

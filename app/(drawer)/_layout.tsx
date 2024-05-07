@@ -1,7 +1,7 @@
 import { Drawer } from 'expo-router/drawer';
 import { Link } from 'expo-router';
 
-import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const DrawerLayout = () => {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Text } from 'react-native';
 import api from '~/components/api/api';
 
 import { FlashList } from '@shopify/flash-list';
+import { Span } from '~/components/Text';
 
 export default function index() {
   const [questions, setQuestions] = useState([] as any);
@@ -23,7 +23,7 @@ export default function index() {
   return (
     <FlashList
       data={questions}
-      renderItem={({ item }: any) => <Text>{item.statement}</Text>}
+      renderItem={({ item }: any) => <Span>{item.statement}</Span>}
       estimatedItemSize={200}
     />
   );

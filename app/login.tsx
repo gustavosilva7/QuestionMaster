@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, TextInput, View } from 'react-native';
 import axios from 'axios';
 import { useAuth } from './AuthProvider';

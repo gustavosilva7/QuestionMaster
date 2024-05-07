@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Span } from '~/components/Text';
 
 export default function index() {
   return (
     <>
-      <Text>Configs</Text>
+      <Span>Configs</Span>
     </>
   );
 }

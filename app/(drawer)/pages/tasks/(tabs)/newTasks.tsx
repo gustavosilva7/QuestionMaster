@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Span } from '~/components/Text';
 
 export default function newTasks() {
   return (
     <>
-      <Text>Nova questão</Text>
+      <Span>Nova questão</Span>
     </>
   );
 }

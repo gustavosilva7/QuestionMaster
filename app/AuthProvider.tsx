@@ -1,5 +1,6 @@
 // AuthProvider.tsx
-import React, { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from 'react';
 
 type Auth = {
   token: string;
@@ -29,7 +30,7 @@ export const useAuth = () => {
   const context = React.useContext(AuthContext);
 
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error('erro');
   }
 
   return context;
@@ -37,6 +38,38 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState<AuthState>(null);
+
+  // Carregar os dados de autenticação do AsyncStorage quando o componente é montado
+  useEffect(() => {
+    const loadAuthData = async () => {
+      try {
+        const jsonValue = await AsyncStorage.getItem('@auth');
+        if (jsonValue != null) {
+          setAuth(JSON.parse(jsonValue));
+        }
+      } catch (e) {
+        console.error('Erro ao carregar os dados de autenticação:', e);
+      }
+    };
+
+    loadAuthData();
+  }, []);
+
+  // Salvar os dados de autenticação no AsyncStorage sempre que eles forem alterados
+  useEffect(() => {
+    const saveAuthData = async () => {
+      try {
+        const jsonValue = JSON.stringify(auth);
+        await AsyncStorage.setItem('@auth', jsonValue);
+      } catch (e) {
+        console.error('Erro ao salvar os dados de autenticação:', e);
+      }
+    };
+
+    if (auth != null) {
+      saveAuthData();
+    }
+  }, [auth]);
 
   const value = { auth, setAuth };
 

@@ -1,8 +1,5 @@
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { Link } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
-
-import { HeaderButton } from '../../components/HeaderButton';
 
 const DrawerLayout = () => (
   <Drawer>
@@ -15,7 +12,27 @@ const DrawerLayout = () => (
       }}
     />
     <Drawer.Screen
-      name="(tabs)"
+      name="pages/questions/(tabs)"
+      options={{
+        headerTitle: 'Questões',
+        drawerLabel: 'Questões',
+        drawerIcon: ({ size, color }) => (
+          <MaterialIcons name="border-bottom" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="pages/tasks/(tabs)"
+      options={{
+        headerTitle: 'Provas',
+        drawerLabel: 'Provas',
+        drawerIcon: ({ size, color }) => (
+          <MaterialIcons name="border-bottom" size={size} color={color} />
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="pages/configs/(tabs)"
       options={{
         headerTitle: 'Configurações',
         drawerLabel: 'Configurações',

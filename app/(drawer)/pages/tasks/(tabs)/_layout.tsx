@@ -12,14 +12,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Provas',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="newTasks"
         options={{
-          title: 'Nova prova',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

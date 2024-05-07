@@ -26,8 +26,12 @@ function Layout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Stack>
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="(drawer)"
+          options={{ headerShown: false, statusBarHidden: false, statusBarStyle: 'dark' }}
+        />
         <Stack.Screen name="modal" options={{ title: 'Modal', presentation: 'modal' }} />
+        <Stack.Screen name="user" options={{ title: 'Modal', presentation: 'modal' }} />
       </Stack>
     </GestureHandlerRootView>
   );

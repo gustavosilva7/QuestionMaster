@@ -1,4 +1,3 @@
-// AuthProvider.tsx
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useEffect, useState } from 'react';
 
@@ -39,7 +38,6 @@ export const useAuth = () => {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [auth, setAuth] = useState<AuthState>(null);
 
-  // Carregar os dados de autenticação do AsyncStorage quando o componente é montado
   useEffect(() => {
     const loadAuthData = async () => {
       try {
@@ -55,7 +53,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     loadAuthData();
   }, []);
 
-  // Salvar os dados de autenticação no AsyncStorage sempre que eles forem alterados
   useEffect(() => {
     const saveAuthData = async () => {
       try {

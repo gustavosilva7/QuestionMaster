@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
 interface ButtonProps extends TouchableOpacityProps {
-  onPress?: () => void;
   title?: string;
+  onPress?: () => void;
 }
 
 export const Button = forwardRef<TouchableOpacity, ButtonProps>(({ onPress, title }, ref) => {

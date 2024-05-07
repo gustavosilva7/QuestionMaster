@@ -12,14 +12,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Questões',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="newQuestions"
         options={{
-          title: 'Nova questão',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

@@ -12,21 +12,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Configurações',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Perfil',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="users"
         options={{
-          title: 'Usuários',
+          title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

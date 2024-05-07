@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 
-import { TabBarIcon } from '~/components/TabBarIcon';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function TabLayout() {
   return (
@@ -13,14 +13,18 @@ export default function TabLayout() {
         name="index"
         options={{
           title: '',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="question-circle" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="newQuestions"
         options={{
           title: '',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="plus-circle" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

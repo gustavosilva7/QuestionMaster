@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router';
 
-import { TabBarIcon } from '~/components/TabBarIcon';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function TabLayout() {
   return (
@@ -13,21 +14,16 @@ export default function TabLayout() {
         name="index"
         options={{
           title: '',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: '',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ size, color }) => <Ionicons name="settings" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="users"
         options={{
           title: '',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="user-plus" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

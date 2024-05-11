@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, TextInput, View } from 'react-native';
-import axios from 'axios';
 import { useAuth } from './AuthProvider';
 import { useFormik } from 'formik';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import api from '~/components/api/api';
 
 type Auth = {
   token: string;
@@ -28,7 +28,7 @@ export default function Login() {
     },
     onSubmit: async (values) => {
       try {
-        const response = await axios.post('http://192.168.0.13:8000/api/login', values);
+        const response = await api.post('/login', values);
         const data = response.data;
         console.log('Token de acesso:', data);
         setAuth(data);
